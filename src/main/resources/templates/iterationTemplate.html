@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <th>lp.</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Telefon</th>
+            <th>Pensja</th>
+
+        </thead>
+        <tbody>
+            <tr th:each="person, iterStat : ${list}" th:if="${person.visible}">
+            <td th:text="${iterStat.index}"></td>
+            <td th:text="${person.firstName}"></td>
+            <td th:text="${person.lastName}"></td>
+            <td th:text="${person.phoneNumber}"></td>
+            <td th:text="${#numbers.formatDecimal(person.salary, 1, 2)}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

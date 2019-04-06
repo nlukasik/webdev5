@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="#{welcome.message}"></h1>
+<h3 th:utext="#{welcome.info}"></h3>
+<p th:text="|${fName} - ${lName}|"> </p>
+
+<hr>
+
+<p th:text="|${person.firstName} ${person.lastName}|"></p>
+<p th:text="${person.phoneNumber}"></p>
+<p th:text="|Pensja: ${#numbers.formatDecimal(person.salary, 1, 2)}|"></p>
+
+</body>
+</html>
